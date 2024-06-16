@@ -165,7 +165,7 @@ main (
   const char **argv
 )
 {
-  const char *data_file_type;
+  const char *data_file_type = NULL;
   int i;
   int found = 0;
 

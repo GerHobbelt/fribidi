@@ -30,6 +30,8 @@
 # include <config.h>
 #endif
 
+#ifndef HAVE_GETOPT
+
 #include <stdio.h>
 
 /* Comment out all this code if we are using the GNU C Library, and are not
@@ -1266,3 +1268,5 @@ main (
 }
 
 #endif /* TEST */
+
+#endif

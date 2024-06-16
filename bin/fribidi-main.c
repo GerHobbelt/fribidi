@@ -57,7 +57,11 @@
 # include <strings.h>
 #endif
 
-#include "getopt.h"
+#ifdef HAVE_GETOPT
+# include <getopt.h>
+#else
+# include "getopt.h"
+#endif
 
 #define appname "fribidi"
 
@@ -81,15 +85,15 @@ die2 (
 
 #define die1(msg) die2("%s", msg)
 
-fribidi_boolean do_break, do_pad, do_mirror, do_reorder_nsm, do_clean;
-fribidi_boolean show_input, show_visual, show_basedir;
-fribidi_boolean show_ltov, show_vtol, show_levels;
-const int default_text_width = 80;
-int text_width;
-const char *char_set;
-const char *bol_text, *eol_text;
-FriBidiParType input_base_direction;
-int char_set_num;
+static fribidi_boolean do_break, do_pad, do_mirror, do_reorder_nsm, do_clean;
+static fribidi_boolean show_input, show_visual, show_basedir;
+static fribidi_boolean show_ltov, show_vtol, show_levels;
+static const int default_text_width = 80;
+static int text_width;
+static const char *char_set;
+static const char *bol_text, *eol_text;
+static FriBidiParType input_base_direction;
+static int char_set_num;
 
 static void
 help (
@@ -171,7 +175,7 @@ version (
 
 static char *
 my_fribidi_strdup (
-  char *s
+  const char *s
 )
 {
   char *m;
@@ -188,7 +192,7 @@ my_fribidi_strdup (
 int
 main (
   int argc,
-  char *argv[]
+  const char **argv
 )
 {
   int exit_val;

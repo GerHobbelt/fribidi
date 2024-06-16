@@ -44,7 +44,8 @@ typedef struct {
 
 #define LINE_SIZE 2048 /* Size of largest example line in BidiTest */
 #define ARRAY_CHUNK_SIZE 32
-int_array_t *new_int_array()
+
+static int_array_t *new_int_array()
 {
   int_array_t *arr = (int_array_t*)malloc(sizeof(int_array_t));
   arr->len = 0;
@@ -54,7 +55,7 @@ int_array_t *new_int_array()
   return arr;
 }
 
-void int_array_add(int_array_t *arr, int val)
+static void int_array_add(int_array_t *arr, int val)
 {
   if (arr->len == arr->capacity)
     {
@@ -64,7 +65,7 @@ void int_array_add(int_array_t *arr, int val)
   arr->data[arr->len++] = val;
 }
 
-int *int_array_free(int_array_t *arr, int free_data)
+static int *int_array_free(int_array_t *arr, int free_data)
 {
   int *data = arr->data;
   if (free_data) {
@@ -75,7 +76,7 @@ int *int_array_free(int_array_t *arr, int free_data)
   return data;
 }
 
-char_array_t *new_char_array()
+static char_array_t *new_char_array()
 {
   char_array_t *arr = (char_array_t*)malloc(sizeof(char_array_t));
   arr->len = 0;
@@ -85,7 +86,7 @@ char_array_t *new_char_array()
   return arr;
 }
 
-void char_array_add(char_array_t *arr, char val)
+static void char_array_add(char_array_t *arr, char val)
 {
   if (arr->len == arr->capacity)
     {
@@ -95,7 +96,7 @@ void char_array_add(char_array_t *arr, char val)
   arr->data[arr->len++] = val;
 }
 
-char *char_array_free(char_array_t *arr, int free_data)
+static char *char_array_free(char_array_t *arr, int free_data)
 {
   char *data = arr->data;
   if (free_data) {
@@ -250,7 +251,7 @@ parse_test_line (const char *line,
 }
 
 int
-main (int argc, char **argv)
+main (int argc, const char **argv)
 {
     FILE *channel;
     char line[LINE_SIZE];

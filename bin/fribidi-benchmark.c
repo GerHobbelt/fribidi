@@ -62,7 +62,12 @@
 #include <windows.h>
 #endif /* _WIN32 */
 
-#include "getopt.h"
+
+#ifdef HAVE_GETOPT
+# include <getopt.h>
+#else
+# include "getopt.h"
+#endif
 
 #define appname "fribidi_benchmark"
 
@@ -245,7 +250,7 @@ FRIBIDI_END_IGNORE_DEPRECATIONS
 int
 main (
   int argc,
-  char *argv[]
+  const char **argv
 )
 {
   int niter = NUM_ITER;

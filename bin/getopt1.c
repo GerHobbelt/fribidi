@@ -21,6 +21,8 @@
 #include <config.h>
 #endif
 
+#ifndef HAVE_GETOPT
+
 #ifdef _LIBC
 # include <getopt.h>
 #else
@@ -211,3 +213,5 @@ main (
 }
 
 #endif /* TEST */
+
+#endif

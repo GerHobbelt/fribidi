@@ -243,9 +243,9 @@ gen_arabic_shaping_tab (
 
   printf ("/*\n"
 	   "  use %s(key,shape) to access your table\n\n"
-	   "  required memory: %ld\n"
+	   "  required memory: %zu\n"
 	   " */\n\n",
-	   macro_name, (long)(maxshaped - minshaped + 1) * 4 * sizeof (FriBidiChar));
+	   macro_name, (size_t)(maxshaped - minshaped + 1) * 4 * sizeof (FriBidiChar));
 
   printf ("\n" "/* *IND" "ENT-OFF* */\n\n");
 

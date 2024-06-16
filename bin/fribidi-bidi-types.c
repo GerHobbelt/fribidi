@@ -6,7 +6,6 @@ main (
   void
 )
 {
-
   FriBidiChar c;
 
   for (c = 0; c < FRIBIDI_UNICODE_CHARS; c++)
