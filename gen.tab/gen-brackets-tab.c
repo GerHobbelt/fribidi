@@ -316,6 +316,10 @@ gen_brackets_tab (
   printf ("/* End of generated " outputname " */\n");
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_gen_brackets_tab_main
+#endif
+
 int
 main (
   int argc,

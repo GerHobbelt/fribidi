@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <fribidi.h>
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_bidi_types_main
+#endif
+
 int
 main (
   void

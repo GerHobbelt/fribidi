@@ -159,6 +159,10 @@ gen_unicode_version (
   printf ("/* End of generated " outputname " */\n");
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_gen_unicode_version_main
+#endif
+
 int
 main (
   int argc,

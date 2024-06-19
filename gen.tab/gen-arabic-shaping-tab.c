@@ -274,6 +274,10 @@ gen_arabic_shaping_tab (
   printf ("/* End of generated " outputname " */\n");
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_gen_arabic_shaping_tab_main
+#endif
+
 int
 main (
   int argc,

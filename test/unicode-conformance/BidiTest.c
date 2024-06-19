@@ -250,6 +250,10 @@ parse_test_line (const char *line,
     return (FriBidiCharType *) int_array_free (types, FALSE);
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_bidi_test_main
+#endif
+
 int
 main (int argc, const char **argv)
 {

@@ -112,7 +112,7 @@ enum FriBidiJoiningLinearEnumOffsetOne
   NUM_TYPES
 };
 
-struct
+static struct
 {
   const char *name;
   int key;
@@ -328,6 +328,10 @@ gen_joining_type_tab (
 
   printf ("/* End of generated " outputname " */\n");
 }
+
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_gen_joining_type_tab_main
+#endif
 
 int
 main (

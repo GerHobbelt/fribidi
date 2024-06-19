@@ -2,8 +2,12 @@
 #include <string.h>
 #include <fribidi.h>
 
-char buf[BUFSIZ];
-FriBidiChar ubuf[BUFSIZ];
+static char buf[BUFSIZ];
+static FriBidiChar ubuf[BUFSIZ];
+
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_caprtl2utf8_main
+#endif
 
 int
 main (

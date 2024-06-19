@@ -241,6 +241,10 @@ void parse_test_line (char *line,
   *visual_ordering = (int*)int_array_free (visual_ordering_array, FALSE);
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_bidi_character_test_main
+#endif
+
 int
 main (int argc, const char **argv)
 {

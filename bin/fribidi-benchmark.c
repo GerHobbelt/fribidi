@@ -247,6 +247,10 @@ FRIBIDI_END_IGNORE_DEPRECATIONS
   return;
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_benchmark_main
+#endif
+
 int
 main (
   int argc,

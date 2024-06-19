@@ -189,6 +189,10 @@ my_fribidi_strdup (
   return m;
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main   fribidi_fribidi_main
+#endif
+
 int
 main (
   int argc,
