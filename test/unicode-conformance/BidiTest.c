@@ -45,7 +45,7 @@ typedef struct {
 #define LINE_SIZE 2048 /* Size of largest example line in BidiTest */
 #define ARRAY_CHUNK_SIZE 32
 
-static int_array_t *new_int_array()
+static int_array_t *new_int_array(void)
 {
   int_array_t *arr = (int_array_t*)malloc(sizeof(int_array_t));
   arr->len = 0;
@@ -76,7 +76,7 @@ static int *int_array_free(int_array_t *arr, int free_data)
   return data;
 }
 
-static char_array_t *new_char_array()
+static char_array_t *new_char_array(void)
 {
   char_array_t *arr = (char_array_t*)malloc(sizeof(char_array_t));
   arr->len = 0;
