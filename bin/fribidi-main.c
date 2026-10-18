@@ -390,7 +390,7 @@ FRIBIDI_END_IGNORE_DEPRECATIONS
 	  {
 	    const char *new_line, *nl_found;
 	    FriBidiChar logical[MAX_STR_LEN];
-	    char outstring[MAX_STR_LEN];
+	    char outstring[4 * MAX_STR_LEN + 1];
 	    FriBidiParType base;
 	    FriBidiStrIndex len;
 	    fribidi_boolean got_input;
